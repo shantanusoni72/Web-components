@@ -330,30 +330,30 @@ button {
 
 .domains {
     width: 100%;
-    height: auto;
+    height: 600px;
     display: flex;
 }
 
-.domains-1 {
+.card {
     width: 40%;
-    height: 500px;
+    height: auto;
     padding: 30px;
     margin: 20px;
     border-radius: 10px;
     background-color: rgb(219, 237, 238);
 }
 
-.domains-1 img {
+.card img {
     width: 70%;
     height: 70%;
 }
 
-.domains-1 h3,
+.card h3,
 p {
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
-.domains-1 button {
+.card button {
     font-size: 20px;
     color: white;
     padding: 10px;
@@ -418,6 +418,18 @@ p {
 
 .domains-2-2 img {
     width: 50%;
+}
+
+.card.second {
+    background-color: rgb(238,232,227);
+}
+
+.card.third {
+    background-color: rgb(230,242,238);
+}
+
+.card.fourth {
+    background-color: rgb(235,240,252);
 }
 
 /* Dropdown */
@@ -630,7 +642,7 @@ p {
         display: block;
     }
 
-    .domains-1 {
+    .card {
         width: 70%;
         height: 300px;
         padding: 30px;
@@ -641,12 +653,12 @@ p {
         background-color: rgb(219, 237, 238);
     }
 
-    .domains-1 img {
+    .card img {
         width: 50%;
         height: 50%;
     }
 
-    .domains-1 button {
+    .card button {
         font-size: 16px;
         color: white;
         padding: 10px;

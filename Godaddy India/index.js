@@ -24,21 +24,7 @@ function handleDropdown(dropdownName, command) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const dropdownToggle = document.querySelector(".dropdown-toggle");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
-
-  // Toggle dropdown visibility
-  dropdownToggle.addEventListener("click", function () {
-      dropdownMenu.classList.toggle("show");
-  });
-
-  // Close the dropdown when clicking outside
-  window.addEventListener("click", function (event) {
-      if (!event.target.matches('.dropdown-toggle')) {
-          if (dropdownMenu.classList.contains("show")) {
-              dropdownMenu.classList.remove("show");
-          }
-      }
-  });
-});
+var logo = document.querySelector(".logo");
+logo.addEventListener("click", function() {
+  handleDropdown("null", "close");
+})

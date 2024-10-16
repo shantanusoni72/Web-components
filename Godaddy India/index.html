@@ -12,22 +12,26 @@
     <!-- Header -->
     <div class="container header">
         <div class="row header-row">
-            <img id="logo" class="logo" src="assets/logo.svg" />
+            <img class="logo" src="assets/logo.svg" />
             <ul>
-                <li id="dropdownToggle">
-                    <a href="#">Domains <img src="/assets/arrow_down.svg" /></a>
+                <li>
+                    <a href="#" onclick="handleDropdown('domainDropdown','open')">Domains <img
+                            src="/assets/arrow_down.svg" /></a>
                 </li>
-                <li id="dropdownToggle">
-                    <a href="#">Websites and Hosting <img src="/assets/arrow_down.svg" /></a>
+                <li>
+                    <a href="#" onclick="handleDropdown('websiteDropdown','open')">Websites and Hosting <img
+                            src="/assets/arrow_down.svg" /></a>
                 </li>
                 <li>
                     <a href="#">Email</a>
                 </li>
-                <li id="dropdownToggle">
-                    <a href="#">Security <img src="/assets/arrow_down.svg" /></a>
+                <li>
+                    <a href="#" onclick="handleDropdown('securityDropdown','open')">Security <img
+                            src="/assets/arrow_down.svg" /></a>
                 </li>
-                <li id="dropdownToggle">
-                    <a href="#">Marketing <img src="/assets/arrow_down.svg" /></a>
+                <li>
+                    <a href="#" onclick="handleDropdown('marketingDropdown','open')">Marketing <img
+                            src="/assets/arrow_down.svg" /></a>
                 </li>
             </ul>
             <div class="header-end">
@@ -257,7 +261,7 @@
         </div>
 
         <div id="Domain" class="tab domains">
-            <div class="domains-1">
+            <div class="card">
                 <img src="assets/foxy.png.png" alt="foxy" />
                 <h3>Domains</h3>
                 <p>
@@ -291,7 +295,7 @@
         </div>
 
         <div id="Recommended" class="tab domains" style="display:none">
-            <div class="domains-1">
+            <div class="card second">
                 <img src="assets/saintwool.png" alt="foxy" />
                 <h3>Professional Email $ 1.99 per user/mo</h3>
                 <p>
@@ -299,8 +303,8 @@
                 </p>
                 <button>Get Started</button>
             </div>
-            <div class="domains-2">
-                <div class="domains-2-1">
+            <div class="domains-2 second">
+                <div class="domains-2-1 second">
                     <div>
                         <h3>Websites $ 9.99/mo</h3>
                         <p>
@@ -310,7 +314,7 @@
                     </div>
                     <img src="assets/img-hp-recore-co-small.png" />
                 </div>
-                <div class="domains-2-2">
+                <div class="domains-2-2 second">
                     <div>
                         <h3>Web Hosting $ 4.99/mo</h3>
                         <p>
@@ -323,12 +327,22 @@
             </div>
         </div>
 
-        <div id="WSecurity" class="tab sdomains" style="display:none">
-            <div class="sdomains-1">
-                1
+        <div id="WSecurity" class="tab domains" style="display:none">
+            <div class="card third">
+                <img src="assets/jewelly.png" alt="jewelly" />
+                <h3>WordPress ₹ 279.00/mo</h3>
+                <p>
+                    Let AI quickly build a fully-managed website that's always up to date, with no worries.
+                </p>
+                <button>Explore WordPress Plans</button>
             </div>
-            <div class="sdomains-2">
-                2
+            <div class="card fourth">
+                <img src="assets/strawberry.png" alt="strawberry" />
+                <h3>SSL Certificates ₹ 2,999.00/yr</h3>
+                <p>
+                    Help keep sensitive data secure on your site and boost search ranking with an SSL Certificate.
+                </p>
+                <button>Secure You Data</button>
             </div>
         </div>
     </div>
