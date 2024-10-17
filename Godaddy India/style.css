@@ -16,6 +16,7 @@
 
 body {
     margin: 0px;
+    overflow-x: hidden;
 }
 
 /* JS Classlists */
@@ -24,20 +25,19 @@ body {
 }
 
 /* Header */
-.container {
-    height: auto;
-}
 
 .header {
     color: white;
     padding-inline: 54px;
+    padding-block: 4px;
     background-color: #2B2B2B;
 }
 
 .header-row {
-    width: 95%;
+    width: 97%;
     height: auto;
     display: flex;
+    justify-content: space-between;
 }
 
 .hamburger {
@@ -45,19 +45,16 @@ body {
 }
 
 .logo {
-    width: 12%;
-    display: block;
-    color: white;
+    width: 10%;
 }
 
 .header-row ul {
-    width: 70%;
+    width: 80%;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
     font-size: 18px;
     line-height: 24px;
     font-weight: 850;
-    padding-inline: 11px;
-    margin-block: 13px;
+    margin: 8px 0px;
     display: flex;
 }
 
@@ -70,6 +67,9 @@ body {
 .header-row ul li a {
     text-decoration: none;
     color: white;
+    padding: 0px 2px 0px 0px;
+    display: flex;
+    cursor: pointer;
 }
 
 .header-row ul li:hover {
@@ -81,14 +81,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-self: center;
-    font-family: "gdsherpa", Helvetica, Arial, sans-serif;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
 .header-end a {
     font-size: 14px;
     line-height: 24px;
-    font-weight: 565px;
-    padding: 10px;
+    font-weight: 565;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;
     text-decoration: none;
     color: white;
     border-radius: 10px;
@@ -98,9 +98,14 @@ body {
     background-color: rgb(102, 102, 102);
 }
 
+.shopping_cart:hover {
+    background-color: rgb(17, 17, 17);
+}
+
 /* Search */
 .search {
-    width: 95%;
+    width: 90%;
+    height: auto;
     display: flex;
     border-radius: 10px;
     margin: auto;
@@ -110,23 +115,22 @@ body {
 }
 
 .input {
-    width: 70%;
+    width: 100%;
     padding: 0.5%;
     margin: auto;
 }
 
 .input input {
-    width: 100%;
-    height: 70px;
+    width: 98%;
+    height: 80px;
     font-size: 27px;
     line-height: 27px;
     border-radius: 10px;
-    padding: 3%;
-    padding-inline: 5%;
+    padding: 8px 176px 8px 56px;
     border: 0px;
     font-weight: 850;
     letter-spacing: 0.2px;
-    box-shadow: 70;
+    box-shadow: 0 4px 4px 0 rgba(197, 197, 197, 0.2), 0 3px 10px 0 rgba(122, 122, 122, 0.19);
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
@@ -137,9 +141,8 @@ button {
 }
 
 .input svg {
-    width: 2%;
-    margin-top: 24px;
-    margin-left: 13px;
+    margin-top: 28px;
+    margin-left: 22px;
 }
 
 .input button {
@@ -160,11 +163,11 @@ button {
 }
 
 .price {
-    width: 30%;
+    width: 25%;
     display: flex;
-    padding-left: 0.5%;
     border: 1px solid transparent;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .price-svg {
@@ -191,7 +194,7 @@ button {
 }
 
 .price-content p {
-    font-size: 13px;
+    font-size: 12px;
     margin: 0px;
 }
 
@@ -201,16 +204,17 @@ button {
 
 /* Hero */
 .hero {
-    width: 98%;
+    width: 94%;
     height: auto;
     display: flex;
+    padding-inline: 11px;
     column-gap: 10px;
     justify-content: end;
 }
 
 .hero-1 {
     width: 65%;
-    padding: 50px;
+    padding: 40px;
     background-image: url("/assets/airo-landscape.png");
     background-size: cover;
     border-radius: 20px;
@@ -220,13 +224,15 @@ button {
 .hero-1 label {
     background-color: rgb(245, 245, 245);
     border-radius: 7px;
-    padding: 1%;
+    padding: 4px 5.5px;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 850;
 }
 
 .hero-1 img {
-    width: 20%;
+    width: 18%;
     margin-block: 20px;
 }
 
@@ -245,7 +251,7 @@ button {
     font-size: 18px;
     line-height: 27px;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
-    font-weight: 500;
+    font-weight: 565;
     color: rgb(17, 17, 17);
 }
 
@@ -253,7 +259,7 @@ button {
     background-color: rgb(17, 17, 17);
     color: #fff;
     border: none;
-    padding: 15px 25px;
+    padding: 18px 48px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
@@ -262,10 +268,6 @@ button {
     overflow: hidden;
     transition: all 0.5s ease;
     display: inline-block;
-}
-
-.hero-1 button:hover {
-    padding-right: 30px;
 }
 
 .hero-1 button::after {
@@ -277,7 +279,7 @@ button {
 }
 
 .hero-1 button:hover::after {
-    right: 10px;
+    right: 20px;
     opacity: 1;
 }
 
@@ -358,13 +360,13 @@ button {
 
 /* Category */
 .category {
-    width: 100%;
+    width: 97%;
     height: auto;
     margin-block: 40px;
 }
 
 .category h1 {
-    font-size: 45px;
+    font-size: 52px;
     line-height: 62px;
     text-align: center;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
@@ -379,39 +381,46 @@ button {
 .category-btn button {
     position: relative;
     background-color: #ffffff;
-    color: rgb(0, 0, 0);
+    color: #111111;
     border: 2px solid rgb(201, 201, 201);
     border-radius: 30px;
-    padding: 20px;
-    padding-inline: 30px;
+    padding: 12px 24px 15px;
     margin-inline: 7px;
+    font-size: 16px;
     font-weight: 700;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
 .category-btn button:focus {
     position: relative;
-    border: 0px;
-    background-color: #2B2B2B;
-    color: white;
+    border: 2px solid #111111;
+    background-color: #111111;
+    color: #F5F5F5;
 }
 
 .category-btn button:hover {
     cursor: pointer;
+    transition: 0.3s;
+    transform: scale(1.01);
     border: 2px solid #2B2B2B;
 }
 
+.category-btn button:focus:hover {
+    border: 2px;
+}
+
 .domains {
-    width: 100%;
+    width: 98%;
     height: auto;
     display: flex;
-    margin: 20px;
+    justify-content: space-between;
     column-gap: 20px;
 }
 
 .card {
-    width: 85%;
+    width: 55%;
     padding: 30px;
-    padding-block: 70px;
+    padding-block: 50px;
     border-radius: 10px;
 }
 
@@ -424,9 +433,20 @@ button {
     margin: 0px;
 }
 
-.card h3,
-p {
+.card h3 {
+    font-size: 29px;
+    margin-block: 10px;
+    font-weight: 850;
+    line-height: 36px;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
+}
+
+.card p {
+    font-size: 16px;
+    width: 55%;
+    margin-block: 13px;
+    font-weight: 565;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;;
 }
 
 .card button {
@@ -448,10 +468,10 @@ p {
 }
 
 .domains.inner {
-    width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0px;
+    column-gap: 0px;
     row-gap: 20px;
 }
 
@@ -467,12 +487,30 @@ p {
     background-color: #F1F0EC;
 }
 
+.card.d-2 h3 {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.card.d-2 p {
+    width: 100%;
+}
+
 .card.d-3 {
     padding: 20px;
     padding-top: 20px;
     display: flex;
     align-self: start;
     background-color: #F8E9E0;
+}
+
+.card.d-3 h3 {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.card.d-3 p {
+    width: 100%;
 }
 
 .card.r-1 {
@@ -487,12 +525,30 @@ p {
     background-color: #CFDFEC;
 }
 
+.card.r-2 h3 {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.card.r-2 p {
+    width: 100%;
+}
+
 .card.r-3 {
     padding: 20px;
     padding-top: 20px;
     display: flex;
     align-self: start;
     background-color: #D8EFEF;
+}
+
+.card.r-3 h3 {
+    font-size: 22px;
+    line-height: 24px;
+}
+
+.card.r-3 p {
+    width: 100%;
 }
 
 .card.ws-1 {
