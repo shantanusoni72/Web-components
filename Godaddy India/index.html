@@ -2,8 +2,8 @@
 
 <head>
     <title>Godaddy - India</title>
-    <link href="https://db.onlinewebfonts.com/c/0aee6008b82cde991ec28387169bb13e?family=GD+Sherpa+Regular"
-        rel="stylesheet">
+    <!-- <link href="https://db.onlinewebfonts.com/c/0aee6008b82cde991ec28387169bb13e?family=GD+Sherpa+Regular"
+        rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -14,7 +14,7 @@
         <div class="row header-row">
             <img class="logo" src="assets/logo.svg" />
             <ul>
-                <li>
+                <li id="toggleDomain">
                     <a href="#" onclick="handleDropdown('domainDropdown','open')">Domains <img
                             src="/assets/arrow_down.svg" /></a>
                 </li>
@@ -265,9 +265,9 @@
                 website, logo, and more.
             </p>
             <button id="HeroBtnOne">
-                Learn More
-                <svg id="HeroSVGone" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#FFFFFF">
+                <span>Learn More</span>
+                <svg id="HeroSVGone" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                    width="18px" fill="#FFFFFF">
                     <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
                 </svg></button>
         </div>
@@ -276,9 +276,9 @@
             <p>AI Suggested Domains</p>
             <h1>Find the perfect domain and business name with AI.</h1>
             <button id="HeroBtnTwo">
-                Try AI Domain Search
-                <svg id="HeroSVGtwo" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                    fill="#000000">
+                <span>Try AI Domain Search</span>
+                <svg id="HeroSVGtwo" xmlns="http://www.w3.org/2000/svg" height="18px" viewBox="0 -960 960 960"
+                    width="18px" fill="#000000">
                     <path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z" />
                 </svg></button>
         </div>
@@ -286,7 +286,7 @@
 
     <!-- Category -->
     <div class="category">
-        <h1>What does your business need first?</h1>
+        <h1>What's first up for your business?</h1>
         <div class="category-btn">
             <button onclick="opentab('Domain')" autofocus>Domains</button>
             <button onclick="opentab('Recommended')">Recommended</button>

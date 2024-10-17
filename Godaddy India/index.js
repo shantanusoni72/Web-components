@@ -14,28 +14,26 @@ function opentab(tabName) {
 }
 
 // Handle Dropdown
-function handleDropdown(dropdownName, command) {
-  var i;
-  var x = document.getElementsByClassName("dropdown");
-  if (command == "close") {
-    for (i = 0; i < x.length; i++) {
-      if (x[i].style.display == "flex") {
-        x[i].style.display = "none";
-      }
-    }
-  } else if (command == "open") {
-    for (i = 0; i < x.length; i++) {
-      x[i].style.display = "none";
-    }
-    document.getElementById(dropdownName).style.display = "flex";
+function handleDropdown(dropdownId, action) {
+  const dropdown = document.getElementById(dropdownId);
+  var header = document.querySelector(".header");
+
+  if (action === 'open') {
+    var allElements = document.body.children;
+    // for (var i = 0; i < allElements.length; i++) {
+    //   allElements[i].classList.remove("blur");
+    // }
+
+    dropdown.classList.toggle('open');
+
+    // for (var i = 0; i < allElements.length; i++) {
+    //   if (allElements[i] !== dropdown) {
+    //     allElements[i].classList.add("blur");
+    //     header.classList.remove("blur");
+    //   }
+    // }
   }
 }
-
-// Hide Dropdown onClick Logo
-var logo = document.querySelector(".logo");
-logo.addEventListener("click", function () {
-  handleDropdown("null", "close");
-})
 
 // Hide SearchSVG onClick SearchInput
 var searchInput = document.getElementById("searchInput");
@@ -55,30 +53,3 @@ document.addEventListener('click', function (event) {
     searchInput.style.paddingInline = "5%";
   }
 });
-
-var heroBtnOne = document.getElementById("HeroBtnOne");
-var heroBtnTwo = document.getElementById("HeroBtnTwo");
-
-var heroSVGone = document.getElementById("HeroSVGone");
-var heroSVGtwo = document.getElementById("HeroSVGtwo");
-
-heroBtnOne.addEventListener("mouseover", function () {
-  heroSVGone.style.display = "block";
-  heroSVGone.style.transition = "0.2s";
-})
-
-heroBtnTwo.addEventListener("mouseover", function () {
-  heroSVGtwo.style.display = "block";
-  heroSVGtwo.style.transition = "0.2s";
-})
-
-// Hide RightArrow onHover Document
-
-// document.addEventListener('mouseover', function (event) {
-//   if (event.target !== heroBtnOne || event.target !== heroBtnTwo) {
-//     if(heroSVGone.style.display === "block" || heroSVGtwo.style.display === "block") {
-//       heroSVGone.style.display = "none";
-//       heroSVGtwo.style.display = "none";
-//     }
-//   }
-// });
