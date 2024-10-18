@@ -14,24 +14,39 @@ function opentab(tabName) {
 }
 
 // Handle Dropdown
-function handleDropdown(dropdownId, action) {
+function handleDropdown(dropdownId, dropdownToggle, action) {
+  // Dropdowns
   const dropdown = document.getElementById(dropdownId);
-  var header = document.querySelector(".header");
+  const allDropdowns = document.querySelectorAll('.dropdown');
 
+  var DropdownToggle = document.getElementById(dropdownToggle);
+  var allDropdownToggles = document.getElementsByClassName('toggle');
+  var PricingLink = document.getElementById("pricingLink");
+
+  // Close all dropdowns
+  allDropdowns.forEach(d => {
+    if (d.id !== dropdownId) {
+      d.classList.remove('open');
+    }
+  });
+
+   // Close all toggles
+  //  allDropdownToggles.forEach(d => {
+  //   if (d.id !== DropdownToggle) {
+  //     d.classList.remove('dropdownToggle');
+  //   }
+  // });
+
+  PricingLink.classList.remove('show');
+  DropdownToggle.classList.remove('dropdownToggle');
+
+  // Toggle the selected dropdown
   if (action === 'open') {
-    var allElements = document.body.children;
-    // for (var i = 0; i < allElements.length; i++) {
-    //   allElements[i].classList.remove("blur");
-    // }
-
-    dropdown.classList.toggle('open');
-
-    // for (var i = 0; i < allElements.length; i++) {
-    //   if (allElements[i] !== dropdown) {
-    //     allElements[i].classList.add("blur");
-    //     header.classList.remove("blur");
-    //   }
-    // }
+    const isOpen = dropdown.classList.toggle('open');
+    if (isOpen) {
+      PricingLink.classList.add('show');
+      DropdownToggle.classList.add('dropdownToggle');
+    } 
   }
 }
 
