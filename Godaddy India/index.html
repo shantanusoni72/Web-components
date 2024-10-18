@@ -10,40 +10,246 @@
     <!-- Header -->
     <div class="container header">
         <div class="row header-row">
-            <img class="logo" src="assets/logo.svg" />
+            <div class="row header-inner">
+                <img class="hamburger" src="assets/hamburger.svg" />
+                <img class="logo" src="assets/logo.svg" />
+            </div>
             <ul>
-                <li id="toggleDomain">
-                    <a onclick="handleDropdown('domainDropdown','open')">
-                        <span>Domains</span>
-                        <img src="/assets/arrow_down.svg" />
-                    </a>
+                <li id="domainToggle" class="toggle" onclick="handleDropdown('domainDropdown', 'domainToggle' ,'open')">
+                    Domains
+                    <img src="/assets/arrow_down.svg" />
                 </li>
-                <li>
-                    <a onclick="handleDropdown('websiteDropdown','open')">Websites and Hosting <img
-                            src="/assets/arrow_down.svg" /></a>
+                <li id="websiteToggle" class="toggle"
+                    onclick="handleDropdown('websiteDropdown', 'websiteToggle', 'open')">
+                    Websites and Hosting <img src="/assets/arrow_down.svg" />
                 </li>
                 <li>
                     <a href="#">Email</a>
                 </li>
-                <li>
-                    <a onclick="handleDropdown('securityDropdown','open')">Security <img
-                            src="/assets/arrow_down.svg" /></a>
+                <li id="securityToggle" class="toggle"
+                    onclick="handleDropdown('securityDropdown', 'securityToggle', 'open')">
+                    Security <img src="/assets/arrow_down.svg" />
                 </li>
-                <li>
-                    <a onclick="handleDropdown('marketingDropdown','open')">Marketing <img
-                            src="/assets/arrow_down.svg" /></a>
+                <li id="marketingToggle" class="toggle"
+                    onclick="handleDropdown('marketingDropdown', 'marketingToggle', 'open')">
+                    Marketing <img src="/assets/arrow_down.svg" />
                 </li>
-                <li>
+                <li id="pricingLink">
                     <a href="#">Pricing</a>
                 </li>
             </ul>
             <div class="header-end">
-                <a href="#">Contact</a>
-                <a href="#">Help</a>
-                <a href="#">Signin</a>
-                <a class="shopping_cart"><img style="width: 21px; color: rgb(255, 255, 255);" src="assets/shopping_cart.svg" /></a>
+                <a class="contact" href="#">Contact</a>
+                <a href="#"><span>Help<span><img class="header-img" src="assets/help.svg" /></a>
+                <a href="#"><span>Sign In</span><img class="header-img" src="assets/user.svg" /></a>
+                <a href="#" class="shopping_cart"><img style="width: 21px; color: rgb(255, 255, 255);"
+                        src="assets/shopping_cart.svg" /></a>
             </div>
-            <img class="hamburger" src="assets/hamburger.svg" />
+        </div>
+    </div>
+
+    <!-- Slidebar -->
+    <div class="sidebar">
+        <div class="sidebar-logo">
+            <img src="assets/logo.svg" alt="GoDaddy Logo" />
+            <button class="close-btn">✖</button>
+        </div>
+        <ul class="menu">
+            <li><a href="#" onclick="openSubMenu('domainsMenu')">Domains <span>→</span></a></li>
+            <li><a href="#" onclick="openSubMenu('websitesMenu')">Websites and Hosting <span>→</span></a></li>
+            <li><a href="#">Email</a></li>
+            <li><a href="#" onclick="openSubMenu('securityMenu')">Security <span>→</span></a></li>
+            <li><a href="#" onclick="openSubMenu('marketingMenu')">Marketing <span>→</span></a></li>
+            <li><a href="#">Pricing</a></li>
+        </ul>
+        <div class="footer">
+            <a href="#">Help Center<img src="assets/help.svg" /></a>
+            <a href="#">Account<img src="assets/user.svg"/></a>
+        </div>
+        <div id="domainsMenu" class="sub-menu">
+            <div class="sub-menu-header">
+                <button class="back-btn" onclick="closeSubMenu()">←</button>
+            </div>
+            <div style="overflow-y: scroll;">
+                <div class="side-section">
+                    <h3>Find a Domain</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/search.svg" />
+                            <a href="#">Search for Domain Names</a>
+                        </li>
+                        <li>
+                            <img src="/assets/transfer.svg" />
+                            <a href="#">Transfer Domain Names</a>
+                        </li>
+                        <li>
+                            <img src="/assets/gtld.svg" />
+                            <a href="#">gTLD Domain Extensions</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section">
+                    <h3>Auctions for Domains</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/auction.svg" />
+                            <a href="#">Auctions for Domain Names</a>
+                        </li>
+                        <li>
+                            <img src="/assets/bill.svg" />
+                            <a href="#">Appraise Domain Name Value</a>
+                        </li>
+                        <li>
+                            <img src="/assets/investing.svg" />
+                            <a href="#">Investing in Domain Names</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section">
+                    <h3>Domain Tools and Services</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/click.svg" />
+                            <a href="#">Generate Domains Names</a>
+                        </li>
+                        <li>
+                            <img src="/assets/globe.svg" />
+                            <a href="#">Find a Domain Owner (WHOIS</a>
+                        </li>
+                        <li>
+                            <img src="/assets/profile.svg" />
+                            <a href="#">Domain Broker Service</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section-2">
+                    <img src="assets/orange.png" />
+                    <a href="#">Register Your Domain Now</a>
+                </div>
+            </div>
+        </div>
+        <div id="websitesMenu" class="sub-menu">
+            <div class="sub-menu-header">
+                <button class="back-btn" onclick="closeSubMenu()">←</button>
+            </div>
+            <div style="overflow-y: scroll;">
+                <div class="side-section">
+                    <h3>Websites</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/window.svg" />
+                            <a href="#">Website Builder</a>
+                        </li>
+                        <li>
+                            <img src="/assets/store.svg" />
+                            <a href="#">Online Store</a>
+                        </li>
+                        <li>
+                            <img src="/assets/arrow_right.svg" />
+                            <a href="#">All Website Options</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section">
+                    <h3>Hosting</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/server.svg" />
+                            <a href="#">Website Hosting</a>
+                        </li>
+                        <li>
+                            <img src="/assets/server.svg" />
+                            <a href="#">Wordpress Hosting</a>
+                        </li>
+                        <li>
+                            <img src="/assets/vps.svg" />
+                            <a href="#">VPS Hosting</a>
+                        </li>
+                        <li>
+                            <img src="/assets/arrow_right.svg" />
+                            <a href="#">All Hosting Options</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section">
+                    <h3>GoDaddy Pro</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/click.svg" />
+                            <a href="#">GoDaddy Hub Client Dashboard</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section-2">
+                    <img src="assets/cooking.png" />
+                    <a href="#">Sell Online With WordPress Ecommerce Hosting</a>
+                </div>
+            </div>
+        </div>
+        <div id="securityMenu" class="sub-menu">
+            <div class="sub-menu-header">
+                <button class="back-btn" onclick="closeSubMenu()">←</button>
+            </div>
+            <div style="overflow-y: scroll;">
+                <div class="side-section">
+                    <h3>SSL Certificates</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/ssl.svg" />
+                            <a href="#">SSL Certificates</a>
+                        </li>
+                        <li>
+                            <img src="/assets/lock.svg" />
+                            <a href="#">Managed SSL Certificate</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section">
+                    <h3>Web Security</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/verified_user.svg" />
+                            <a href="#">Web Security</a>
+                        </li>
+                        <li>
+                            <img src="/assets/arrow_right.svg" />
+                            <a href="#">All Web Security Options</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section-2">
+                    <img src="assets/nevada" />
+                    <a href="#">Back Up Your Website for Peace of Mind</a>
+                </div>
+            </div>
+        </div>
+        <div id="marketingMenu" class="sub-menu">
+            <div class="sub-menu-header">
+                <button class="back-btn" onclick="closeSubMenu()">←</button>
+            </div>
+            <div style="overflow-y: scroll;">
+                <div class="side-section">
+                    <h3>Marketing Tools</h3>
+                    <ul>
+                        <li>
+                            <img src="/assets/mic.svg" />
+                            <a href="#">Digital Marketing</a>
+                        </li>
+                        <li>
+                            <img src="/assets/lighting.svg" />
+                            <a href="#">Logo Maker</a>
+                        </li>
+                        <li>
+                            <img src="assets/image.svg" />
+                            <a href="#">Content & Photo Creator</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="side-section-2">
+                    <img src="assets/bastard.png" />
+                    <a href="#">Learn to Grow Your Business</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -226,7 +432,10 @@
                     d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z" />
             </svg>
             <input id="searchInput" placeholder="Type the domain you want" />
-            <button>Search Domains</button>
+            <button>
+                <span>Search Domains</span>
+                <img src="assets/search.svg" />
+            </button>
         </form>
         <div class="price">
             <div class="price-svg">
@@ -249,7 +458,7 @@
                         d="M33.5915,10.413a3.95,3.95,0,0,0-4.9733-3.2,2.41,2.41,0,0,0-1.8473,1.8334,4.98,4.98,0,0,0-.0887,1.231c0,.1843,0,.3686,0,.553-.0286.01-.0467.016-.065.0217a1.0175,1.0175,0,0,0-.7053,1.325,4.0329,4.0329,0,0,0,.6931,1.3163.3705.3705,0,0,1,.074.21c.0047,1.0144.003,2.0288.0034,3.0432,0,.2006.0526.2533.2484.2533h1.6749c.2007,0,.2548-.0547.2549-.26q.0006-.8493,0-1.6985V14.895c.0506.0045.0858.0046.12.011a3.8849,3.8849,0,0,0,1.4409-.0039A3.9406,3.9406,0,0,0,33.5915,10.413Zm-4.02,2.3658a3.324,3.324,0,0,1-.6025-.1433c-.084-.0211-.1115-.0736-.11-.1634.0056-.381.0024-.7622.0024-1.1432,0-.3693-.0111-.7391.0048-1.1077a1.5437,1.5437,0,0,1,.108-.5127.76.76,0,0,1,.7977-.4606A1.7888,1.7888,0,0,1,31.41,10.61,1.7643,1.7643,0,0,1,29.5712,12.7788Z" />
                     <path class="a"
                         d="M21.7808,7.0671a3.9522,3.9522,0,1,0,3.9478,3.9544A3.9545,3.9545,0,0,0,21.7808,7.0671Zm-.0043,5.7185A1.77,1.77,0,1,1,23.55,11.0205,1.7659,1.7659,0,0,1,21.7765,12.7856Z" />
-            </svg>
+                </svg>
             </div>
             <div class="price-content">
                 <h3>125.21*/1st yr.</h3>
@@ -264,8 +473,9 @@
         <div class="hero-1">
             <label>NEW</label><br />
             <img src="/assets/img-hp-airo-logo.svg" alt="airo" />
-            <h1>Buy a domain and get online fast with AI.</h1>
-            <p>Buy a new domain and get GoDaddy Airo™, our customizable, AI-powered solution that can easily deliver a website, logo, and more.^
+            <h1>Put your domain into action with AI.</h1>
+            <p>Buy a new domain and get GoDaddy Airo™, our customizable, AI-powered solution that can easily deliver a
+                website, logo, and more.^
             </p>
             <button id="HeroBtnOne">
                 <span>Learn More</span>
@@ -305,7 +515,7 @@
                 </p>
                 <button><a href="#">Search Domains</a></button>
             </div>
-            <div class="domains inner">
+            <div class="domain-inner">
                 <div class="card d-2">
                     <div>
                         <h3>.co for $ 0.01/1st year</h3>
@@ -338,7 +548,7 @@
                 </p>
                 <button><a href="#">Started</a></button>
             </div>
-            <div class="domains inner">
+            <div class="domain-inner">
                 <div class="card r-2">
                     <div>
                         <h3>Websites $ 9.99/mo</h3>
