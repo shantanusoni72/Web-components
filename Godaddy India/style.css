@@ -24,6 +24,19 @@ body {
     filter: blur(2px);
 }
 
+#pricingLink.show {
+    display: block; 
+    opacity: 1;
+}
+
+.dropdownToggle {
+    background-color: white;
+    color: rgb(17, 17, 17);
+}
+
+#pricingLink {
+    display: none; 
+}
 /* Header */
 
 .header {
@@ -62,18 +75,22 @@ body {
     list-style: none;
     border-radius: 10px;
     padding: 8px 12px;
+    cursor: pointer;
 }
 
 .header-row ul li a {
     text-decoration: none;
     color: white;
-    padding: 0px 2px 0px 0px;
     display: flex;
-    cursor: pointer;
 }
 
 .header-row ul li:hover {
     background-color: rgb(102, 102, 102);
+}
+
+.header-row ul li.dropdownToggle:hover {
+    background-color: #FFFFFF;
+    color: rgb(17, 17, 17);
 }
 
 .header-end {
@@ -92,6 +109,7 @@ body {
     text-decoration: none;
     color: white;
     border-radius: 10px;
+    padding: 8px 12px;
 }
 
 .header-end a:hover {
@@ -104,7 +122,7 @@ body {
 
 /* Search */
 .search {
-    width: 90%;
+    width: 93%;
     height: auto;
     display: flex;
     border-radius: 10px;
@@ -116,12 +134,12 @@ body {
 
 .input {
     width: 100%;
-    padding: 0.5%;
+    padding: 0.7%;
     margin: auto;
 }
 
 .input input {
-    width: 98%;
+    width: 100%;
     height: 80px;
     font-size: 27px;
     line-height: 27px;
@@ -132,6 +150,10 @@ body {
     letter-spacing: 0.2px;
     box-shadow: 0 4px 4px 0 rgba(197, 197, 197, 0.2), 0 3px 10px 0 rgba(122, 122, 122, 0.19);
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
+}
+
+.input input:focus {
+    outline: 2px solid rgb(85, 106, 224);
 }
 
 .input svg,
@@ -149,7 +171,7 @@ button {
     margin-top: 4px;
     margin-left: -155px;
     padding: 1%;
-    padding-block: 1.7%;
+    padding-block: 2.05%;
     color: white;
     background-color: rgb(85, 106, 224);
     border-radius: 10px;
@@ -167,6 +189,7 @@ button {
     display: flex;
     border: 1px solid transparent;
     border-radius: 20px;
+    padding: 10px;
     cursor: pointer;
 }
 
@@ -186,6 +209,10 @@ button {
 .price:hover {
     background-color: rgb(251, 251, 251);
     border: 1px solid rgb(200, 200, 200);
+}
+
+.price:hover h3 {
+    color: rgb(9, 117, 122);
 }
 
 .price-content h3 {
@@ -237,7 +264,7 @@ button {
 }
 
 .hero-1 h1 {
-    width: 40%;
+    width: 45%;
     margin-block: 0px;
     font-size: 50px;
     line-height: 62px;
@@ -247,7 +274,7 @@ button {
 }
 
 .hero-1 p {
-    width: 43%;
+    width: 45%;
     font-size: 18px;
     line-height: 27px;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
@@ -290,7 +317,7 @@ button {
 .hero-2 {
     width: 22%;
     padding: 20px;
-    padding-block: 130px;
+    padding-block: 125px;
     text-align: center;
     color: white;
     background-color: rgb(17, 17, 17);
@@ -360,7 +387,7 @@ button {
 
 /* Category */
 .category {
-    width: 97%;
+    width: 100%;
     height: auto;
     margin-block: 40px;
 }
@@ -410,16 +437,16 @@ button {
 }
 
 .domains {
-    width: 98%;
-    height: auto;
+    width: 85%;
     display: flex;
     justify-content: space-between;
     column-gap: 20px;
+    padding: 30px 70px;
 }
 
 .card {
-    width: 55%;
-    padding: 30px;
+    width: 50%;
+    padding-inline: 30px;
     padding-block: 50px;
     border-radius: 10px;
 }
@@ -443,10 +470,12 @@ button {
 
 .card p {
     font-size: 16px;
+    line-height: 24px;
     width: 55%;
     margin-block: 13px;
     font-weight: 565;
-    font-family: gdsherpa, Helvetica, Arial, sans-serif;;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;
+    color: rgb(17, 17, 17);
 }
 
 .card button {
@@ -459,6 +488,8 @@ button {
 
 .card button a {
     font-size: 16px;
+    font-weight: 695;
+    font-family: gdsherpa, Helvetica, Arial, sans-serif;
     color: white;
     text-decoration: none;
 }
@@ -467,19 +498,30 @@ button {
     transform: scale(1.05);
 }
 
-.domains.inner {
+.domain-inner {
+    width: 59%;
     display: flex;
     flex-direction: column;
     margin: 0px;
     column-gap: 0px;
-    row-gap: 20px;
+    row-gap: 10px;
+    align-self: center;
+}
+
+.domain-inner img {
+    width: 50%;
 }
 
 .card.d-1 {
     background-color: #D9EEEC;
 }
 
+.card.d-1 p {
+    width: 70%;
+}
+
 .card.d-2 {
+    min-width: 100%;
     padding: 20px;
     padding-top: 20px;
     display: flex;
@@ -497,6 +539,7 @@ button {
 }
 
 .card.d-3 {
+    min-width: 100%;
     padding: 20px;
     padding-top: 20px;
     display: flex;
@@ -518,6 +561,7 @@ button {
 }
 
 .card.r-2 {
+    min-width: 100%;
     padding: 20px;
     padding-top: 20px;
     display: flex;
@@ -530,11 +574,8 @@ button {
     line-height: 24px;
 }
 
-.card.r-2 p {
-    width: 100%;
-}
-
 .card.r-3 {
+    min-width: 100%;
     padding: 20px;
     padding-top: 20px;
     display: flex;
@@ -547,17 +588,15 @@ button {
     line-height: 24px;
 }
 
-.card.r-3 p {
-    width: 100%;
+.card.r-3 p, .card.r-2 p {
+    width: 90%;
 }
 
 .card.ws-1 {
-    width: 43%;
     background-color: rgb(230, 242, 238);
 }
 
 .card.ws-2 {
-    width: 43%;
     background-color: rgb(235, 240, 252);
 }
 
@@ -577,11 +616,13 @@ button {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+    display: none;
 }
 
 .dropdown.open {
     max-height: 500px;
     opacity: 1;
+    display: flex;
 }
 
 .section {
@@ -594,10 +635,6 @@ button {
 .dropdown.open .section-2 {
     transform: translateX(0);
     opacity: 1;
-}
-
-.dropdown {
-    display: flex;
 }
 
 .section {
