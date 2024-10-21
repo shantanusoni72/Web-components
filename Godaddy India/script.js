@@ -73,7 +73,7 @@ var searchInput = document.getElementById("searchInput");
 var searchSVG = document.getElementById("searchSVG");
 
 searchInput.addEventListener('click', function () {
-  if (window.innerWidth >= 1200) {
+  if (window.innerWidth >= 992) {
     searchSVG.style.display = "none";
     searchInput.style.transition = "0.2s";
     searchInput.style.paddingInline = "2%";
@@ -82,7 +82,7 @@ searchInput.addEventListener('click', function () {
 
 // Show SearchSVG onClick Document
 document.addEventListener('click', function (event) {
-  if(window.innerWidth >= 1200) {
+  if(window.innerWidth >= 992) {
     if (event.target !== searchInput && event.target !== searchSVG) {
       searchSVG.style.display = "block";
       searchInput.style.transition = "0.2s";

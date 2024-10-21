@@ -19,7 +19,12 @@
 body {
     padding: 0px;
     margin: 0px;
-    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+::selection {
+    background-color: rgb(154, 255, 255);
 }
 
 /* JS Classlists */
@@ -72,7 +77,7 @@ body {
 .header-row ul {
     width: 80%;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 24px;
     font-weight: 850;
     margin: 8px 0px;
@@ -84,6 +89,7 @@ body {
     border-radius: 10px;
     padding: 8px 12px;
     cursor: pointer;
+    display: flex;
 }
 
 .header-img {
@@ -138,8 +144,7 @@ body {
 .SecurityDropdown,
 .MarketingDropdown {
     width: 94%;
-    padding: 40px;
-    padding-block: 35px;
+    
     position: absolute;
     z-index: 3;
     justify-content: space-between;
@@ -148,11 +153,12 @@ body {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    display: none;
 }
 
 .dropdown.open {
     max-height: 500px;
+    padding: 40px;
+    padding-block: 35px;
     opacity: 1;
     display: flex;
 }
@@ -335,6 +341,7 @@ body {
     }
 
     .close-btn {
+        display: inline;
         background: none;
         border: none;
         font-size: 20px;
@@ -342,7 +349,7 @@ body {
     }
 
     .close-btn img {
-        margin-right: -100px;
+        margin-right: -120px;
     }
 
     /* Navigation menu */
@@ -603,7 +610,7 @@ button {
     margin-top: 4px;
     margin-left: -155px;
     padding: 1%;
-    padding-block: 1.7%;
+    padding-block: 2%;
     color: white;
     background-color: rgb(85, 106, 224);
     border-radius: 10px;
@@ -668,6 +675,11 @@ button img {
 @media screen and (max-width: 1200px) {
     .price {
         display: none;
+    }
+
+    .input button {
+        margin-left: -144px;
+        padding-block: 2.7%;
     }
 }
 
@@ -747,8 +759,6 @@ button img {
 
 /* Category */
 .category {
-    width: 100%;
-    height: auto;
     margin-block: 40px;
 }
 
@@ -773,7 +783,7 @@ button img {
     border-radius: 30px;
     padding: 12px 24px 15px;
     margin-inline: 7px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
@@ -797,12 +807,13 @@ button img {
 }
 
 .domains {
-    width: 80%;
+    width: 90%;
+    flex-wrap: wrap;
     margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40% 40%;
-    gap: 15px 15px;
+    gap: 20px 20px;
     grid-template-areas:
         "d1 d2"
         "d1 d3";
@@ -813,19 +824,27 @@ button img {
     background-color: #D9EEEC;
     padding: 30px;
     border-radius: 15px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
 }
 
 .d1:hover {
     box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
 }
 
+.card div svg {
+    display: none;
+}
+
 .d2 {
     grid-area: d2;
     background-color: #F1F0EC;
-    padding: 40px;
+    padding: 20px;
+    padding-block: 70px;
     display: flex;
     flex-direction: row-reverse;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .d2:hover {
@@ -835,23 +854,29 @@ button img {
 .d3 {
     grid-area: d3;
     background-color: #F8E9E0;
-    padding: 40px;
+    padding: 20px;
+    padding-block: 70px;
     display: flex;
     flex-direction: row-reverse;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .d3:hover {
-    box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
+    box-shadow: 0 4px 8px 0 rgba(160, 160, 160, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
 }
 
-.d1 img, .d2 img, .d3 img {
+.d1 img,
+.d2 img,
+.d3 img {
     width: 70%;
-    height: auto;
     margin: 0px;
+    animation: fadeIn 0.3s; 
 }
 
-.d1 div h3, .d2 div h3, .d3 div h3 {
+.d1 div h3,
+.d2 div h3,
+.d3 div h3 {
     font-size: 29px;
     margin-block: 10px;
     font-weight: 850;
@@ -859,17 +884,19 @@ button img {
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
-.d1 div p, .d2 div p, .d3 div p {
+.d1 div p,
+.d2 div p,
+.d3 div p {
     font-size: 16px;
     line-height: 24px;
     width: 70%;
-    margin-block: 13px;
     font-weight: 565;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
     color: rgb(17, 17, 17);
 }
 
-.d2 div p, .d3 div p {
+.d2 div p,
+.d3 div p {
     font-size: 16px;
     line-height: 24px;
     width: 80%;
@@ -879,7 +906,9 @@ button img {
     color: rgb(17, 17, 17);
 }
 
-.d1 div button, .d2 div button, .d3 div button {
+.d1 div button,
+.d2 div button,
+.d3 div button {
     padding: 10px;
     border: 0px;
     border-radius: 5px;
@@ -891,17 +920,27 @@ button img {
     color: white;
 }
 
-.d1 div button:hover, .d2 div button:hover, .d3 div button:hover {
+.d1 div button a,
+.d2 div button a,
+.d3 div button a {
+    text-decoration: none;
+    color: white;
+}
+
+.d1 div button:hover,
+.d2 div button:hover,
+.d3 div button:hover {
     transform: scale(1.05);
 }
 
 .recommended {
-    width: 80%;
+    width: 90%;
+    flex-wrap: wrap;
     margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 40% 40%;
-    gap: 15px 15px;
+    gap: 20px 20px;
     grid-template-areas:
         "r1 r2"
         "r1 r3";
@@ -912,6 +951,7 @@ button img {
     background-color: #F1E6E3;
     padding: 30px;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .r1:hover {
@@ -925,6 +965,7 @@ button img {
     display: flex;
     flex-direction: row-reverse;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .r2:hover {
@@ -938,19 +979,34 @@ button img {
     display: flex;
     flex-direction: row-reverse;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .r3:hover {
     box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
 }
 
-.r1 img, .r2 img, .r3 img {
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.r1 img,
+.r2 img,
+.r3 img {
     width: 70%;
     height: auto;
     margin: 0px;
+    animation: fadeIn 0.3s; 
 }
 
-.r1 div h3, .r2 div h3, .r3 div h3 {
+.r1 div h3,
+.r2 div h3,
+.r3 div h3 {
     font-size: 29px;
     margin-block: 10px;
     font-weight: 850;
@@ -958,7 +1014,9 @@ button img {
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
-.r1 div p, .r2 div p, .r3 div p {
+.r1 div p,
+.r2 div p,
+.r3 div p {
     font-size: 16px;
     line-height: 24px;
     width: 70%;
@@ -968,7 +1026,8 @@ button img {
     color: rgb(17, 17, 17);
 }
 
-.r2 div p, .r3 div p {
+.r2 div p,
+.r3 div p {
     font-size: 16px;
     line-height: 24px;
     width: 80%;
@@ -978,7 +1037,9 @@ button img {
     color: rgb(17, 17, 17);
 }
 
-.r1 div button, .r2 div button, .r3 div button {
+.r1 div button,
+.r2 div button,
+.r3 div button {
     padding: 10px;
     border: 0px;
     border-radius: 5px;
@@ -987,30 +1048,48 @@ button img {
     font-size: 16px;
     font-weight: 695;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
+}
+
+.r1 div button a,
+.r2 div button a,
+.r3 div button a {
+    text-decoration: none;
     color: white;
 }
 
-.r1 div button:hover, .r2 div button:hover, .r3 div button:hover {
+.r1 div button:hover,
+.r2 div button:hover,
+.r3 div button:hover {
     transform: scale(1.05);
 }
 
 .last {
-    width: 80%;
-    height: 530px;
+    width: 90%;
+    height: 580px;
+    flex-wrap: wrap;
     margin: 30px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 80%;
-    gap: 15px 15px;
+    gap: 20px 20px;
     grid-template-areas:
         "ws-1 ws-2";
 }
 
 .ws-1 {
+    height: 110%;
     grid-area: ws-1;
     background-color: rgb(230, 242, 238);
-    padding: 30px;
+    color: rgb(17, 17, 17);
+    padding: 25px;
     border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.ws-1 div {
+    height: auto;
+    text-align: left;
 }
 
 .ws-1:hover {
@@ -1018,51 +1097,70 @@ button img {
 }
 
 .ws-2 {
+    height: 110%;
     grid-area: ws-2;
     background-color: rgb(235, 240, 252);
-    padding: 40px;
+    padding: 25px;
     border-radius: 15px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .ws-2:hover {
     box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
 }
 
-.ws-1 img, .ws-2 img {
-    width: 50%;
+.ws-2 div {
     height: auto;
-    margin: 0px;
+    text-align: left;
 }
 
-.ws-1 div h3, .ws-2 div h3 {
+.ws-1 img,
+.ws-2 img {
+    width: 82%;
+    height: auto;
+    margin-bottom: 80px;
+    animation: fadeIn 0.3s; 
+}
+
+.ws-1 img {
+    width: 85%;
+    height: auto;
+    padding-top: 20px;
+    margin-bottom: 50px;
+}
+
+.ws-2 img {
+    width: 78%;
+    height: auto;
+}
+
+.ws-1 div h3,
+.ws-2 div h3 {
     font-size: 29px;
-    margin-block: 10px;
+    margin-block: 5px;
     font-weight: 850;
     line-height: 36px;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
 }
 
-.ws-1 div p, .ws-2 div p {
-    font-size: 16px;
-    line-height: 24px;
-    width: 70%;
-    margin-block: 13px;
-    font-weight: 565;
-    font-family: gdsherpa, Helvetica, Arial, sans-serif;
-    color: rgb(17, 17, 17);
+.ws-2 div h3 {
+    margin-block: 10px;
 }
 
-.ws-1 div p, .ws-2 div p {
+.ws-1 div p,
+.ws-2 div p {
     font-size: 16px;
     line-height: 24px;
     width: 80%;
     margin-block: 13px;
-    font-weight: 565;
+    font-weight: 530;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
     color: rgb(17, 17, 17);
 }
 
-.ws-1 div button, .ws-2 div button {
+.ws-1 div button,
+.ws-2 div button {
     padding: 10px;
     border: 0px;
     border-radius: 5px;
@@ -1071,15 +1169,25 @@ button img {
     font-size: 16px;
     font-weight: 695;
     font-family: gdsherpa, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+
+.ws-1 div button a, .ws-2 div button a {
+    text-decoration: none;
     color: white;
 }
 
-.ws-1 div button:hover, .ws-2 div button:hover {
+.ws-1 div button:hover,
+.ws-2 div button:hover {
     transform: scale(1.05);
 }
 
 @media screen and (max-width: 1200px) {
-    
+
+    .category {
+        height: 110%;
+    }
+
     .domains {
         width: 80%;
         margin: 30px auto;
@@ -1092,7 +1200,7 @@ button img {
             "d1 none"
             "d2 d3";
     }
-    
+
     .d1 {
         grid-area: d1;
         grid-column-start: 1;
@@ -1104,11 +1212,15 @@ button img {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
-    
+
     .d1:hover {
         box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
     }
-    
+
+    .card div svg {
+        display: inline;
+    }
+
     .d2 {
         grid-area: d2;
         background-color: #f1f1f1;
@@ -1117,11 +1229,11 @@ button img {
         flex-direction: row;
         border-radius: 15px;
     }
-    
+
     .d2:hover {
         box-shadow: 0 4px 8px 0 rgba(184, 184, 184, 0.2), 0 6px 20px 0 rgba(59, 59, 59, 0.19);
     }
-    
+
     .d3 {
         grid-area: d3;
         background-color: #f1f1f1;
@@ -1130,31 +1242,39 @@ button img {
         flex-direction: row;
         border-radius: 15px;
     }
-    
+
     .d1 img {
         width: 60%;
     }
 
-    .d2 img, .d3 img {
+    .d2 img,
+    .d3 img {
         display: none;
     }
-    
-    .d1 div, .d2 div, .d3 div {
+
+    .d1 div,
+    .d2 div,
+    .d3 div {
         align-self: end;
     }
-    
-    .d1 div p, .d2 div p, .d3 div p {
+
+    .d1 div p,
+    .d2 div p,
+    .d3 div p {
         display: none;
     }
-    
-    .d2 div p, .d3 div p {
+
+    .d2 div p,
+    .d3 div p {
         display: none;
     }
-    
-    .d1 div button, .d2 div button, .d3 div button {
+
+    .d1 div button,
+    .d2 div button,
+    .d3 div button {
         display: none;
     }
-    
+
     .recommended {
         width: 80%;
         margin: 30px auto;
@@ -1169,52 +1289,62 @@ button img {
     }
 
     .r1 {
+        height: auto;
         grid-area: r1;
         display: flex;
         flex-direction: row-reverse;
     }
-    
+
     .r2 {
         grid-area: r2;
         display: flex;
         flex-direction: row-reverse;
         background-color: #f1f1f1;
     }
-    
+
     .r3 {
         grid-area: r3;
         display: flex;
         flex-direction: row-reverse;
         background-color: #f1f1f1;
     }
-    
+
     .r1 img {
         width: 60%;
+        height: fit-content;
     }
 
-    .r2 img, .r3 img {
+    .r2 img,
+    .r3 img {
         display: none;
     }
-    
-    .r1 div, .r2 div, .r3 div {
+
+    .r1 div,
+    .r2 div,
+    .r3 div {
         align-self: end;
     }
-    
-    .r1 div p, .r2 div p, .r3 div p {
+
+    .r1 div p,
+    .r2 div p,
+    .r3 div p {
         display: none;
     }
-    
-    .r2 div p, .r3 div p {
+
+    .r2 div p,
+    .r3 div p {
         display: none;
     }
-    
-    .r1 div button, .r2 div button, .r3 div button {
+
+    .r1 div button,
+    .r2 div button,
+    .r3 div button {
         display: none;
     }
-    
+
     .last {
         width: 80%;
-        height: 530px;
+        height: 400px;
         margin: 30px auto;
         display: grid;
         grid-template-columns: 1fr;
@@ -1224,55 +1354,64 @@ button img {
             "ws-1"
             "ws-2";
     }
-    
+
     .ws-1 {
+        height: auto;
         grid-area: ws-1;
         display: flex;
         flex-direction: row-reverse;
     }
-    
+
     .ws-2 {
+        height: auto;
         grid-area: ws-2;
         display: flex;
         flex-direction: row-reverse;
     }
-    
-    .ws-1 img, .ws-2 img {
+
+    .ws-1 img,
+    .ws-2 img {
         width: 60%;
+        height: fit-content;
     }
-    
-    .ws-1 div h3, .ws-2 div h3 {
+
+    .ws-1 div h3,
+    .ws-2 div h3 {
         width: 100%;
     }
 
-    .ws-1 div, .ws-2 div {
+    .ws-1 div,
+    .ws-2 div {
         align-self: end;
     }
-    
-    .ws-1 div p, .ws-2 div p {
+
+    .ws-1 div p,
+    .ws-2 div p {
         display: none;
     }
-    
-    .ws-1 div p, .ws-2 div p {
+
+    .ws-1 div p,
+    .ws-2 div p {
         display: none;
     }
-    
-    .ws-1 div button, .ws-2 div button {
+
+    .ws-1 div button,
+    .ws-2 div button {
         display: none;
     }
 }
 
 @media screen and (max-width: 576px) {
-    
+
     .category h1 {
         font-size: 30px;
         line-height: 52px;
     }
-    
+
     .category-btn {
         width: 100%;
     }
-    
+
     .category-btn button {
         font-size: 15px;
         margin-inline: 5px;
@@ -1290,7 +1429,7 @@ button img {
             "d1 none"
             "d2 d3";
     }
-    
+
     .d1 {
         grid-area: d1;
         grid-column-start: 1;
@@ -1302,33 +1441,37 @@ button img {
         flex-direction: row-reverse;
         justify-content: space-between;
     }
-    
+
     .d2 {
         grid-area: d2;
         padding: 15px;
         display: flex;
         flex-direction: row;
     }
-    
+
     .d3 {
         grid-area: d3;
         padding: 15px;
         display: flex;
         flex-direction: row;
     }
-    
+
     .d1 img {
         width: 60%;
     }
-    
-    .d1 div h3, .d2 div h3, .d3 div h3 {
+
+    .d1 div h3,
+    .d2 div h3,
+    .d3 div h3 {
         font-size: 20px;
     }
 
-    .d1 div, .d2 div, .d3 div {
+    .d1 div,
+    .d2 div,
+    .d3 div {
         align-self: end;
     }
-    
+
     .recommended {
         width: 80%;
         margin: 30px auto;
@@ -1346,30 +1489,33 @@ button img {
         grid-area: r1;
         padding: 15px;
     }
-    
+
     .r2 {
         grid-area: r2;
         padding: 15px;
     }
-    
+
     .r3 {
         grid-area: r3;
         padding: 15px;
     }
-    
+
     .r1 img {
         width: 60%;
     }
 
-    .r2 img, .r3 img {
+    .r2 img,
+    .r3 img {
         display: none;
     }
-    
-    .r1 div h3, .r2 div h3, .r3 div h3 {
+
+    .r1 div h3,
+    .r2 div h3,
+    .r3 div h3 {
         font-size: 20px;
         line-height: 25px;
     }
-    
+
     .last {
         width: 80%;
         height: 350px;
@@ -1382,43 +1528,50 @@ button img {
             "ws-1"
             "ws-2";
     }
-    
+
     .ws-1 {
         grid-area: ws-1;
         display: 15px;
     }
-    
+
     .ws-2 {
         grid-area: ws-2;
         padding: 15px;
     }
-    
-    .ws-1 img, .ws-2 img {
+
+    .ws-1 img,
+    .ws-2 img {
         width: 60%;
     }
-    
-    .ws-1 div h3, .ws-2 div h3 {
+
+    .ws-1 div h3,
+    .ws-2 div h3 {
         font-size: 20px;
         line-height: 25px;
     }
 }
 
 @media screen and (max-width: 414px) {
-    
+
+    .category {
+        height: 90%;
+    }
+
     .category h1 {
         font-size: 32px;
         line-height: 40px;
     }
-    
+
     .category-btn {
         width: 100%;
+        display: flex;
         overflow-x: scroll;
     }
-    
+
     .category-btn button {
         font-size: 15px;
-        margin-inline: 5px;
-        padding: 15px;
+        margin-inline: 7px;
+        padding: 7px;
     }
 
     .domains {
@@ -1433,7 +1586,7 @@ button img {
             "d1 none"
             "d2 d3";
     }
-    
+
     .d1 {
         grid-area: d1;
         grid-column-start: 1;
@@ -1444,36 +1597,39 @@ button img {
         display: flex;
         flex-direction: row-reverse;
         justify-content: space-between;
-        align-self: center;
     }
-    
+
     .d2 {
         grid-area: d2;
         padding: 15px;
         display: flex;
         flex-direction: row;
     }
-    
+
     .d3 {
         grid-area: d3;
         padding: 15px;
         display: flex;
         flex-direction: row;
     }
-    
+
     .d1 img {
         width: 50%;
         height: 150px;
     }
-    
-    .d1 div h3, .d2 div h3, .d3 div h3 {
+
+    .d1 div h3,
+    .d2 div h3,
+    .d3 div h3 {
         font-size: 20px;
     }
 
-    .d1 div, .d2 div, .d3 div {
+    .d1 div,
+    .d2 div,
+    .d3 div {
         align-self: end;
     }
-    
+
     .recommended {
         width: 90%;
         margin: 30px auto;
@@ -1491,30 +1647,33 @@ button img {
         grid-area: r1;
         padding: 15px;
     }
-    
+
     .r2 {
         grid-area: r2;
         padding: 15px;
     }
-    
+
     .r3 {
         grid-area: r3;
         padding: 15px;
     }
-    
+
     .r1 img {
         width: 50%;
     }
 
-    .r2 img, .r3 img {
+    .r2 img,
+    .r3 img {
         display: none;
     }
-    
-    .r1 div h3, .r2 div h3, .r3 div h3 {
+
+    .r1 div h3,
+    .r2 div h3,
+    .r3 div h3 {
         font-size: 20px;
         line-height: 25px;
     }
-    
+
     .last {
         width: 90%;
         margin: 30px auto;
@@ -1526,8 +1685,9 @@ button img {
             "ws-1"
             "ws-2";
     }
-    
-    .ws-1 img, .ws-2 img {
+
+    .ws-1 img,
+    .ws-2 img {
         display: none;
     }
 }
@@ -1586,10 +1746,11 @@ button img {
 }
 
 .hero-1 button {
+    width: 22%;
     background-color: rgb(17, 17, 17);
     color: #fff;
     border: none;
-    padding: 18px 48px;
+    padding: 18px 28px;
     font-size: 16px;
     font-weight: bold;
     border-radius: 5px;
@@ -1600,20 +1761,28 @@ button img {
     display: inline-block;
 }
 
-.hero-1 button::after {
-    content: '→';
-    position: absolute;
-    right: -20px;
-    opacity: 0;
-    transition: all 0.3s ease;
+@keyframes buttonSlide {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-15%);
+    }
 }
 
-.hero-1 button:hover::after {
-    right: 20px;
-    opacity: 1;
+.hero-1 button span:hover {
+    animation: buttonSlide 0.3s;
 }
 
 .hero-1 button svg {
+    display: none;
+}
+
+.hero-2 button span:hover {
+    animation: buttonSlide 0.5s;
+}
+
+.hero-2 button svg {
     display: none;
 }
 
@@ -1667,28 +1836,12 @@ button img {
     display: inline-block;
 }
 
-.hero-2 button:hover {
-    padding-right: 30px;
-}
-
-.hero-2 button::after {
-    content: '→';
-    position: absolute;
-    right: -20px;
-    opacity: 0;
-    transition: all 0.3s ease;
-}
-
-.hero-2 button:hover::after {
-    right: 10px;
-    opacity: 1;
-}
-
 .hero-2 button svg {
     display: none;
 }
 
 @media screen and (max-width: 1200px) {
+
     /* Hero */
     .hero {
         width: 88%;
@@ -1777,7 +1930,7 @@ button img {
     .hero-2 {
         width: 25%;
         padding: 20px;
-        padding-block: 107px;
+        padding-block: 105px;
         text-align: center;
         color: white;
         background-color: rgb(17, 17, 17);
@@ -1810,11 +1963,10 @@ button img {
     }
 
     .hero-2 button {
-        width: 25%;
         background-color: rgb(255, 255, 255);
         color: rgb(17, 17, 17);
         border: none;
-        padding: 15px 30px;
+        padding: 15px 20px;
         font-size: 16px;
     }
 
@@ -1838,9 +1990,18 @@ button img {
     .hero-2 button svg {
         display: none;
     }
+
+    /* Dropdown */
+    .DomainDropdown,
+    .WebsiteDropdown,
+    .SecurityDropdown,
+    .MarketingDropdown {
+        padding: 0px;
+    }
 }
 
 @media screen and (max-width: 992px) {
+
     /* Hero */
     .hero {
         flex-direction: column;
@@ -1848,19 +2009,27 @@ button img {
     }
 
     .hero-1 {
-        width: 75%;
-    }
-
-    .hero-1 h1 {
-        width: 50%;
+        width: 93%;
     }
 
     .hero-1 p {
-        width: 50%;
+        width: 80%;
+    }
+
+    #HeroBtnOne {
+        padding: 15px 15px;
+    }
+
+    .hero-1 button {
+        padding: 9px 0px;
+    }
+
+    .hero-1 button span {
+        display: inline;
     }
 
     .hero-2 {
-        width: 78%;
+        width: 93%;
         padding: 40px;
         padding-block: 40px;
         padding-bottom: 80px;
@@ -1874,10 +2043,16 @@ button img {
     .hero-2 button {
         width: 30%;
         margin-left: 0px;
+        padding: 9px 0px;
+    }
+
+    .hero-2 button span {
+        display: inline;
     }
 }
 
 @media screen and (max-width: 440px) {
+
     /* Hero */
     .hero {
         width: 95%;
@@ -1887,7 +2062,6 @@ button img {
 
     .hero-1 {
         width: 95%;
-        height: 53%;
         padding: 5px;
         padding-block: 50px;
         margin: 0px;
@@ -1926,7 +2100,6 @@ button img {
 
     .hero-2 {
         width: 80%;
-        height: 15%;
         padding: 30px;
         padding-block: 50px;
         margin: 0px;
