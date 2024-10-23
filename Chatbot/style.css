@@ -1,0 +1,141 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: var(--ff);
+}
+
+:root {
+    --blue: #0059E1;
+    --blue-light: #A6C4FD;
+    --white: #FFFFFF;
+    --grey-light: #F2F2F2;
+    --grey-dark: rgb(110, 110, 110);
+    --black: #000000;
+    --h1: 38px;
+    --h2: 14px;
+    --h3: 12px;
+    --ff: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.container {
+    width: 97%;
+    height: 600px;
+    padding: 20px;
+    display: flex;
+    align-items: end; 
+    justify-content: end;
+}
+
+.chatbot {
+    width: fit-content;
+    padding: 20px;
+}
+
+.chatbot button {
+    padding: 15px;
+    border: 0px;
+    border-radius: 100%;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+@keyframes openWindow {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+.content {
+    width: 27%;
+    animation: openWindow 0.4s;
+    transform-origin: bottom right;
+    display: none;
+    border-radius: 20px;
+    padding: 25px;
+    background: linear-gradient(var(--blue-light), var(--grey-light));
+}
+
+.content img {
+    width: 50px;
+}
+
+.home {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.home div h1 {
+    font-size: var(--h1);
+}
+
+.header {
+    text-align: end;
+}
+
+.section {
+    width: 90%;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 18px;
+}
+
+.section-inner {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 7px;
+}
+
+.section-inner img {
+    width: 11%;
+    height: 7%;
+}
+
+.section-inner div label {
+    color: var(--grey-dark);
+    font-size: var(--h3);
+}
+
+.section-inner div p {
+    color: var(--black);
+    font-size: var(--h2);
+}
+
+.section button {
+    width: 100%; 
+    padding: 7px;
+    border: 0px;
+    border-radius: 7px;
+    font-size: var(--h2);
+    font-weight: bold;
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.section button:hover {
+    background-color: #004bbb;
+}
+
+.content-links a {
+    width: 95%;
+    display: flex;
+    margin-block: 11px;
+    text-decoration: none;
+    padding: 11px;
+    border-radius: 7px;
+    background-color: var(--white);
+    color: var(--black);
+    justify-content: space-between;
+}
+
+.tab {
+    width: 100%;
+    display: flex;
+    position: sticky;
+    border-radius: 20px;
+    background-color: var(--white);
+    padding: 5px;
+    justify-content: space-around;
+}
