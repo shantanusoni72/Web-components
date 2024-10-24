@@ -3,9 +3,14 @@ const ChatBotBtn = document.getElementById('chatbotBtn');
 const FirstSVG = document.getElementById('first');
 const SecondSVG = document.getElementById('second');
 const Content = document.getElementById('content');
-const closeBtn = document.getElementById('close-btn');
+const closeBtns = document.querySelectorAll('.close-btn');
+const backBtn = document.getElementById('back-arrow');
+const threeDots = document.getElementById('three_dots');
+
 const homeBtn = document.getElementById('homeBtn');
 const contactBtn = document.getElementById('contactBtn');
+const homeTab = document.getElementById('home');
+const contactTab = document.getElementById('contact');
 
 // Default States
 SecondSVG.style.display = 'none';
@@ -29,9 +34,25 @@ ChatBotBtn.addEventListener('click', function() {
     Content.style.display = "block";
 })
 
-closeBtn.addEventListener('click', function() {
-    ChatBotBtn.style.display = 'inline';
-    Content.style.display = "none";
+closeBtns.forEach((item) => {
+    item.addEventListener('click', function() {
+        ChatBotBtn.style.display = 'inline';
+        Content.style.display = "none";
+    })  
 })
 
 // Switch tabs home/contact
+homeBtn.addEventListener('click', function() {
+    contactTab.style.display = 'none';
+    homeTab.style.display = 'inline';
+})
+
+contactBtn.addEventListener('click', function() {
+    homeTab.style.display = 'none';
+    contactTab.style.display = 'inline';
+})
+
+backBtn.addEventListener('click', function() {
+    contactTab.style.display = 'none';
+    homeTab.style.display = 'inline';
+})

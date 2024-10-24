@@ -71,8 +71,14 @@
     font-size: var(--h1);
 }
 
-.header {
-    text-align: end;
+.header-1 {
+    display: flex;
+    justify-content: end;
+}
+
+.header-2 {
+    display: flex;
+    justify-content: space-between;
 }
 
 .section {
@@ -138,4 +144,15 @@
     background-color: var(--white);
     padding: 5px;
     justify-content: space-around;
+}
+
+.contact {
+    background-color: var(--white);
+    display: none;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
