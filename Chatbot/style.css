@@ -7,15 +7,34 @@
 :root {
     --blue: #0059E1;
     --blue-light: #A6C4FD;
+    --blue-ligher: #d0e1ff;
     --white: #FFFFFF;
+    --grey-lighter: #fcfcfc;
     --grey-light: #F2F2F2;
+    --grey: #E2E2E4;
     --grey-dark: rgb(110, 110, 110);
     --black: #000000;
     --h1: 38px;
     --h2: 14px;
     --h3: 12px;
     --ff: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --box-shadow: rgba(99, 99, 99, 0.3) 0px 2px 8px 0px;
+    --box-shadow-blue: var(--blue-lighter) 0px 2px 8px 0px;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--blue-light);
+  }
 
 .container {
     width: 97%;
@@ -24,6 +43,7 @@
     display: flex;
     align-items: end; 
     justify-content: end;
+    flex-wrap: wrap;
 }
 
 .chatbot {
@@ -37,6 +57,7 @@
     border-radius: 100%;
     background-color: var(--blue);
     color: var(--white);
+    cursor: pointer;
 }
 
 @keyframes openWindow {
@@ -50,12 +71,15 @@
 
 .content {
     width: 27%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
     animation: openWindow 0.4s;
     transform-origin: bottom right;
     display: none;
     border-radius: 20px;
-    padding: 25px;
     background: linear-gradient(var(--blue-light), var(--grey-light));
+    box-shadow: var(--box-shadow);
 }
 
 .content img {
@@ -63,6 +87,7 @@
 }
 
 .home {
+    height: 95%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -71,27 +96,50 @@
     font-size: var(--h1);
 }
 
+#second-logo {
+    width: 30px; 
+    height: 27px;
+    /* display: none; */
+}
+
 .header-1 {
+    width: 24%;
     display: flex;
     justify-content: end;
+    align-items: center;
+    padding: 20px;
 }
 
 .header-2 {
     display: flex;
     justify-content: space-between;
+    padding: 10px;
+}
+
+.heading {
+    width: 80%;
+    padding-block: 20px;
+    padding: 20px;
 }
 
 .section {
-    width: 90%;
+    width: 85%;
     background-color: var(--white);
     border-radius: 20px;
-    padding: 18px;
+    padding-inline: 10px;
+    padding-block: 10px;
+    box-sizing: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    margin-block: 5px;
+    margin-inline: 15px;
 }
 
 .section-inner {
     display: flex;
     justify-content: space-around;
     margin-bottom: 7px;
+    align-items: center;
 }
 
 .section-inner img {
@@ -118,41 +166,325 @@
     font-weight: bold;
     background-color: var(--blue);
     color: var(--white);
+    cursor: pointer;
 }
 
 .section button:hover {
     background-color: #004bbb;
 }
 
+.content-links {
+    padding-inline: 20px;
+    padding-block: 10px;
+}
+
 .content-links a {
-    width: 95%;
+    width: 90%;
     display: flex;
     margin-block: 11px;
     text-decoration: none;
     padding: 11px;
+    padding-inline: 15px;
     border-radius: 7px;
     background-color: var(--white);
     color: var(--black);
     justify-content: space-between;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: var(--box-shadow)
 }
 
 .tab {
-    width: 100%;
+    width: 85%;
     display: flex;
-    position: sticky;
     border-radius: 20px;
     background-color: var(--white);
-    padding: 5px;
+    padding: 7px;
+    margin-inline: 25px;
+    margin-block: 2px;
     justify-content: space-around;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
 }
 
 .contact {
     background-color: var(--white);
     display: none;
+    border-radius: 20px;
 }
 
 .logo-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+.chat-section {
+    display: flex;
+    gap: 4px;
+    padding-inline: 10px;
+}
+
+.chats {
+    display: flex;
+    flex-direction: column;
+}
+
+.chats span {
+    background-color: var(--white);
+    color: var(--black);
+    padding: 20px;
+    font-size: var(--h2);
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+}
+
+.buttons {
+    text-align: center;
+    margin-block: 15px;
+    padding-inline: 20px;
+}
+
+.buttons button {
+    background-color: var(--white);
+    border: 1px solid var(--blue);
+    border-radius: 5px;
+    font-size: var(--h2);
+    padding: 7px;
+    margin: 3px;
+    cursor: pointer;
+    box-shadow: var(--box-shadow-blue);
+}
+
+.buttons button:hover {
+    transform: scale(1.05);
+    transition: 0.4s;
+    box-shadow: var(--box-shadow);
+}
+
+.input {
+    padding: 20px;
+}
+
+.input input {
+    width: 93%;
+    background-color: var(--white);
+    padding: 11px;
+    padding-block: 15px;
+    border: 0px;
+    border-radius: 15px;
+    outline: none;
+    position: relative;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.input svg {
+    position: absolute;
+    margin-left: -40px;
+    margin-top: 7px;
+    padding: 4px;
+    border-radius: 7px;
+}
+
+.input svg:hover {
+    cursor: not-allowed;
+}
+
+.footer {
+    width: 30%;
+    display: flex;
     justify-content: center;
+    position: fixed;
+    bottom: 30px;
+    font-size: calc(var(--h3) - 2px);
+}
+
+.footer a span{
+    text-decoration: none;
+    color: var(--grey-dark);
+}
+
+.close-btn {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: var(--grey);
+    border-radius: 7px;
+}
+
+#back-arrow, #three-dots {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#back-arrow:hover, #three-dots:hover {
+    background-color: var(--grey);
+    border-radius: 7px;
+}
+
+.three-dots-cards {
+    width: 11.5%;
+    padding: 7px;
+    margin-left: 40px;
+    border-radius: 7px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    position: absolute;
+    display: none;
+}
+
+.item {
+    display: flex;
+    padding-inline: 5px;
+    padding-block: 10px;
+    font-size: var(--h2);
+    border-radius: 7px;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: -5px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #1f9914;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #1f9914;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.item:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+#volume-mute {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .container {
+        width: 45%;
+        height: 600px;
+        padding: 0px;
+    }
+    
+    .chatbot button {
+        padding: 15px;
+        border: 0px;
+        border-radius: 100%;
+        background-color: var(--blue);
+        color: var(--white);
+        cursor: pointer;
+    }
+    
+    .content {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .input input {
+        width: 90%;
+    }
+    
+    .footer {
+        width: 95%;
+        align-items: center;
+    }
+    
+    .three-dots-cards {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .container {
+        width: 97%;
+        height: 650px;
+        padding: 0px;
+    }
+    
+    .chatbot button {
+        padding: 15px;
+        border: 0px;
+        border-radius: 100%;
+        background-color: var(--blue);
+        color: var(--white);
+        cursor: pointer;
+    }
+    
+    .content {
+        width: 95%;
+        height: 95%;
+    }
+    
+    .input input {
+        width: 90%;
+    }
+    
+    .footer {
+        width: 95%;
+        align-items: center;
+    }
+    
+    .three-dots-cards {
+        width: 40%;
+    }
 }
