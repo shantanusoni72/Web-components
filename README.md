@@ -1,1 +1,1 @@
-Three small projects made using HTML, CSS and JS (React ofc).
+Four small projects made using HTML, CSS and JS (React ofc).
