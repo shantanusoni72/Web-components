@@ -36,6 +36,43 @@
     background: var(--blue-light);
   }
 
+/* Animations */
+@keyframes openWindow {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
+}
+
+@keyframes logoAnimationComing {
+    0% {
+        transform: translateX(-100px) scale(1.5);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes logoAnimationGoing {
+    0% {
+        transform: translateX(100px) scale(0.5);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes newMessage {
+    0% {
+        transform: translateY(20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 .container {
     width: 97%;
     height: 600px;
@@ -60,15 +97,6 @@
     cursor: pointer;
 }
 
-@keyframes openWindow {
-    0% {
-        transform: scale(0%);
-    }
-    100% {
-        transform: scale(100%);
-    }
-}
-
 .content {
     width: 27%;
     height: 95%;
@@ -88,24 +116,26 @@
 
 .home {
     height: 95%;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .home div h1 {
     font-size: var(--h1);
 }
 
+#first-logo {
+    display: block;
+}
+
 #second-logo {
     width: 30px; 
     height: 27px;
-    /* display: none; */
+    display: none;
 }
 
 .header-1 {
-    width: 24%;
+    width: 90%;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     padding: 20px;
 }
@@ -120,6 +150,19 @@
     width: 80%;
     padding-block: 20px;
     padding: 20px;
+}
+
+.body {
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#emptyContainer {
+    display: none;
 }
 
 .section {
@@ -144,7 +187,6 @@
 
 .section-inner img {
     width: 11%;
-    height: 7%;
 }
 
 .section-inner div label {
@@ -208,9 +250,13 @@
 }
 
 .contact {
+    height: 100%;
     background-color: var(--white);
     display: none;
     border-radius: 20px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .logo-section {
@@ -230,12 +276,14 @@
 .chats {
     display: flex;
     flex-direction: column;
+    overflow-y: scroll;
+    height: 28vh;
 }
 
 .chats span {
     background-color: var(--white);
     color: var(--black);
-    padding: 20px;
+    padding: 15px;
     font-size: var(--h2);
     border-radius: 15px;
     box-shadow: var(--box-shadow);
@@ -265,6 +313,8 @@
 }
 
 .input {
+    position: -webkit-sticky;
+    bottom: 0;
     padding: 20px;
 }
 
@@ -294,9 +344,9 @@
 }
 
 .footer {
-    width: 30%;
+    width: 25%;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     position: fixed;
     bottom: 30px;
     font-size: calc(var(--h3) - 2px);

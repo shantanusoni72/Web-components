@@ -13,12 +13,15 @@ const NextLink = document.querySelectorAll('.link-svg');
 const InputField = document.getElementById('inputField');
 const InputSVG = document.getElementById('inputSVG');
 
+const FirstLogo = document.getElementById('first-logo');
 const SecondLogo = document.getElementById('second-logo');
+
 const HeaderOne = document.querySelector('.header-1');
 
 const ClearChatBtn = document.getElementById('clearChatBtn');
 const LogoSection = document.querySelector('.logo-section');
 const ChatSection = document.querySelector('.chat-section');
+const ChatMessages = document.querySelector('.chats');
 const Buttons = document.querySelector('.buttons');
 
 var ThreeDotsCard = document.getElementById('three-dots-cards');
@@ -26,11 +29,13 @@ var ThreeDotsCard = document.getElementById('three-dots-cards');
 const homeBtn = document.getElementById('homeBtn');
 const contactBtn = document.getElementById('contactBtn');
 const homeTab = document.getElementById('home');
+const homeBody = document.querySelector('.body');
+
 const contactTab = document.getElementById('contact');
 
 // Default States
 SecondSVG.style.display = 'none';
-SecondLogo.style.display = 'none';
+// SecondLogo.style.display = 'none';
 
 // Event Listeners
 
@@ -49,14 +54,12 @@ ChatBotBtn.addEventListener('mouseout', function () {
 ChatBotBtn.addEventListener('click', function () {
     ChatBotBtn.style.display = 'none';
     Content.style.display = "block";
-    console.log(1);
 })
 
 closeBtns.forEach((item) => {
     item.addEventListener('click', function () {
         ChatBotBtn.style.display = 'inline';
         Content.style.display = "none";
-        console.log(2);
     })
 })
 
@@ -113,7 +116,7 @@ Link[1].addEventListener('mouseout', function () {
 
 // Change button style when input content change
 function activeInputSend() {
-    if (InputField.value !== '') {
+    if (InputField.value.trim() !== '') {
         InputSVG.style.backgroundColor = 'var(--blue)';
         InputSVG.style.color = 'var(--white)';
         InputSVG.style.cursor = 'pointer';
@@ -124,9 +127,47 @@ function activeInputSend() {
     }
 }
 
+// Message Send
+function onClickInputSVG(message) {
+    Buttons.style.display = 'none';
+    const userMessage = document.createElement('span');
+    userMessage.innerText = message;
+    userMessage.style.marginTop = '15px';
+    userMessage.style.backgroundColor = '#0059E1';
+    userMessage.style.color = 'white';
+    userMessage.style.width = 'fit-content';
+    userMessage.style.animation = 'newMessage 0.4s';
+    ChatMessages.style.height = '45vh';
+
+    ChatMessages.appendChild(userMessage);
+    InputField.value = '';
+
+    activeInputSend();
+}
+
+InputSVG.addEventListener('click', function () {
+    if (InputField.value.trim() !== '') {
+        onClickInputSVG(InputField.value);
+        InputField.value = '';
+    }
+})
+
+var actionButtons = document.querySelectorAll('.btn');
+actionButtons[0].addEventListener('click', function () {
+    onClickInputSVG(actionButtons[0].innerText);
+});
+actionButtons[1].addEventListener('click', function () {
+    onClickInputSVG(actionButtons[0].innerText);
+});
+actionButtons[2].addEventListener('click', function () {
+    onClickInputSVG(actionButtons[0].innerText);
+});
+actionButtons[3].addEventListener('click', function () {
+    onClickInputSVG(actionButtons[0].innerText);
+});
+
 // Show/Hide three dots menu 
 threeDots.addEventListener('click', function () {
-    console.log(ThreeDotsCard.style.backgroundColor);
     if (ThreeDotsCard.style.display == 'none') {
         ThreeDotsCard.style.display = 'inline';
     } else {
@@ -135,24 +176,32 @@ threeDots.addEventListener('click', function () {
 })
 
 // Show/Hide logo on scroll
-homeTab.addEventListener('scroll', function () {
-    const scrollTop = homeTab.scrollTop || homeTab.documentElement.scrollTop;
-        if (scrollTop > 20) {
-            HeaderOne.style.backgroundColor = 'var(--white)';
-            HeaderOne.style.position = 'fixed';
-            HeaderOne.style.justifyContent = 'space-between';
-            SecondLogo.style.display = 'inline';
-        } else {
-            HeaderOne.style.backgroundColor = 'transparent';
-            HeaderOne.style.position = 'fixed';
-            HeaderOne.style.justifyContent = 'end';
-            SecondLogo.style.display = 'none';
-        }
-}) 
+homeBody.addEventListener('scroll', function () {
+    const scrollTop = homeBody.scrollTop || homeBody.documentElement.scrollTop;
+    if (scrollTop > 20) {
+        HeaderOne.style.backgroundColor = 'var(--white)';
+        HeaderOne.style.justifyContent = 'space-between';
+        document.getElementById('emptyContainer').style.display = 'inline';
+        SecondLogo.style.display = 'block';
+        FirstLogo.style.display = 'none';
+        SecondLogo.style.animation = 'logoAnimationComing 0.4s';
 
-// Clear chat functionility 
-// ClearChatBtn.addEventListener('click', function() {
-//     LogoSection.style.display = 'none';
-//     ChatSection.style.display = 'none';
-//     Buttons.style.display = 'none';
-// })
+    } else {
+        HeaderOne.style.backgroundColor = 'transparent';
+        HeaderOne.style.justifyContent = 'space-between';
+        document.getElementById('emptyContainer').style.display = 'none';
+        SecondLogo.style.display = 'none';
+        FirstLogo.style.display = 'block';
+        FirstLogo.style.animation = 'logoAnimationGoing 0.4s';
+    }
+})
+
+// Clear chat functionility
+ClearChatBtn.addEventListener('click', function () {
+    // LogoSection.style.display = 'none';
+    var spans = ChatMessages.querySelectorAll('span');
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].remove();
+    }
+    Buttons.style.display = 'none';
+})
