@@ -4,6 +4,7 @@ const FirstSVG = document.getElementById('first');
 const SecondSVG = document.getElementById('second');
 const Content = document.getElementById('content');
 const closeBtns = document.querySelectorAll('.close-btn');
+const resizeBtns = document.querySelectorAll('.resize-btn');
 const backBtn = document.getElementById('back-arrow');
 const threeDots = document.getElementById('three-dots');
 
@@ -17,6 +18,7 @@ const FirstLogo = document.getElementById('first-logo');
 const SecondLogo = document.getElementById('second-logo');
 
 const HeaderOne = document.querySelector('.header-1');
+const HeaderTwo = document.querySelector('.header-2');
 
 const ClearChatBtn = document.getElementById('clearChatBtn');
 const LogoSection = document.querySelector('.logo-section');
@@ -54,6 +56,8 @@ ChatBotBtn.addEventListener('mouseout', function () {
 ChatBotBtn.addEventListener('click', function () {
     ChatBotBtn.style.display = 'none';
     Content.style.display = "block";
+    Content.style.top = '30px';
+    Content.style.bottom = '10px';
 })
 
 closeBtns.forEach((item) => {
@@ -63,20 +67,32 @@ closeBtns.forEach((item) => {
     })
 })
 
+// Minimize/Maximize Content window
+resizeBtns.forEach((item) => {
+    item.addEventListener('click', function () {
+        if (Content.style.width != '50%') {
+            Content.style.width = '50%';
+            Content.style.height = 'fit-content';
+        } else {
+            Content.style.width = '27%';
+            Content.style.height = 'fit-content';
+        }
+    })
+})
+
 // Switch tabs home/contact
 homeBtn.addEventListener('click', function () {
     contactTab.style.display = 'none';
     homeTab.style.display = 'block';
     Content.style.background = 'linear-gradient(var(--blue-light), var(--grey-light))';
-    Content.style.padding = '0px';
+    Content.style.height = '90%';
 })
 
 contactBtn.addEventListener('click', function () {
     homeTab.style.display = 'none';
     contactTab.style.display = 'block';
-    contactTab.style.padding = '0px';
-    Content.style.padding = '0px';
-    // Content.style.background = 'var(--grey-lighter)'
+    contactTab.style.paddingBottom = '20px';
+    Content.style.height = '87%'
 })
 
 backBtn.addEventListener('click', function () {
@@ -177,8 +193,8 @@ threeDots.addEventListener('click', function () {
 
 // Show/Hide logo on scroll
 homeBody.addEventListener('scroll', function () {
-    const scrollTop = homeBody.scrollTop || homeBody.documentElement.scrollTop;
-    if (scrollTop > 20) {
+    const scrollTop = homeBody.scrollTop;
+    if (scrollTop > 10) {
         HeaderOne.style.backgroundColor = 'var(--white)';
         HeaderOne.style.justifyContent = 'space-between';
         document.getElementById('emptyContainer').style.display = 'inline';
@@ -205,3 +221,37 @@ ClearChatBtn.addEventListener('click', function () {
     }
     Buttons.style.display = 'none';
 })
+
+// Drag Content - Draggable area: Content, Dragzone: Content
+function dragPrompt(element, dragzone) {
+    let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+    function dragMouseUp() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    };
+
+    function dragMouseMove(event) {
+        event.preventDefault();
+        pos1 = pos3 - event.clientX;
+        pos2 = pos4 - event.clientY;
+        pos3 = event.clientX;
+        pos4 = event.clientY;
+        element.style.top = `${element.offsetTop - pos2}px`;
+        element.style.left = `${element.offsetLeft - pos1}px`;
+    };
+
+    function dragMouseDown(event) {
+        event.preventDefault();
+        pos3 = event.clientX;
+        pos4 = event.clientY;
+        element.classList.add("drag");
+        document.onmouseup = dragMouseUp;
+        document.onmousemove = dragMouseMove;
+    };
+
+    dragzone[0].onmousedown = dragMouseDown;
+    dragzone[1].onmousedown = dragMouseDown;
+};
+
+dragPrompt(Content, [HeaderOne, HeaderTwo]);

@@ -30,10 +30,13 @@
                     <div id="emptyContainer"></div>
                     <img id="first-logo" src="assets/logo.png" />
                     <img id="second-logo" src="assets/logo.png" />
+                    <div class="taskbar">
+                        <svg class="resize-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"/></svg>
                     <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                         width="24px" fill="#000000">
                         <path d="M160-440v-80h640v80H160Z" />
                     </svg>
+                    </div>
                 </div>
                 <div class="body">
                     <div class="heading">
@@ -65,23 +68,23 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="tab">
-                        <div id="homeBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#000000">
-                                <path
-                                    d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
-                            </svg>
-                            <p>Home</p>
-                        </div>
-                        <div id="contactBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                                fill="#000000">
-                                <path
-                                    d="M280-160q-33 0-56.5-23.5T200-240v-370L40-800h760q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H280Zm-68-560 68 80v400h520v-480H212Zm328 460 56-56-44-44h168v-80H360l180 180ZM360-520h360L540-700l-56 56 44 44H360v80Zm146 40Z" />
-                            </svg>
-                            <p>Contact</p>
-                        </div>
+                </div>
+                <div class="tab">
+                    <div id="homeBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#000000">
+                            <path
+                                d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z" />
+                        </svg>
+                        <p>Home</p>
+                    </div>
+                    <div id="contactBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#000000">
+                            <path
+                                d="M280-160q-33 0-56.5-23.5T200-240v-370L40-800h760q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H280Zm-68-560 68 80v400h520v-480H212Zm328 460 56-56-44-44h168v-80H360l180 180ZM360-520h360L540-700l-56 56 44 44H360v80Zm146 40Z" />
+                        </svg>
+                        <p>Contact</p>
                     </div>
                 </div>
             </div>
@@ -90,8 +93,8 @@
                         var(--white); 
                         box-shadow: var(--box-shadow);
                         border-top-right-radius: 20px;
-                        border-top-left-radius: 20px; 
-                    ">
+                        border-top-left-radius: 20px;                    
+                ">
                     <div class="header-2">
                         <div>
                             <svg id="back-arrow" xmlns="http://www.w3.org/2000/svg" height="24px"
@@ -104,10 +107,13 @@
                                     d="M240-400q-33 0-56.5-23.5T160-480q0-33 23.5-56.5T240-560q33 0 56.5 23.5T320-480q0 33-23.5 56.5T240-400Zm240 0q-33 0-56.5-23.5T400-480q0-33 23.5-56.5T480-560q33 0 56.5 23.5T560-480q0 33-23.5 56.5T480-400Zm240 0q-33 0-56.5-23.5T640-480q0-33 23.5-56.5T720-560q33 0 56.5 23.5T800-480q0 33-23.5 56.5T720-400Z" />
                             </svg>
                         </div>
-                        <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
+                        <div class="taskbar">
+                            <svg class="resize-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Z"/></svg>
+                            <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960"
                             width="24px" fill="#000000">
                             <path d="M160-440v-80h640v80H160Z" />
                         </svg>
+                        </div>
                     </div>
                     <div id="three-dots-cards" class="three-dots-cards">
                         <div id="clearChatBtn" class="item">
